@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employment Contract</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .signature-block {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature-line {
+            margin-top: 50px;
+            border-top: 1px solid #000;
+            width: 40%;
+            padding-top: 5px;
+        }
+        .date-line {
+            margin-top: 30px;
+            border-top: 1px solid #000;
+            width: 30%;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>EMPLOYMENT CONTRACT</h1>
+    
+    <p>THIS EMPLOYMENT AGREEMENT (the "Agreement") is made and entered into on {{ effective_date }}, by and between:</p>
+    
+    <p><strong>{{ party_one_name }}</strong>, with a principal place of business at {{ party_one_address }} (hereinafter referred to as the "Employer"),</p>
+    
+    <p>and</p>
+    
+    <p><strong>{{ party_two_name }}</strong>, residing at {{ party_two_address }} (hereinafter referred to as the "Employee").</p>
+    
+    <p>The Employer and Employee may be collectively referred to as the "Parties" or individually as a "Party".</p>
+    
+    <h2>1. EMPLOYMENT POSITION</h2>
+    <p>The Employer hereby employs the Employee, and the Employee hereby accepts employment with the Employer, subject to the terms and conditions set forth in this Agreement.</p>
+    
+    <h2>2. DUTIES AND RESPONSIBILITIES</h2>
+    <p>The Employee shall perform the following duties and responsibilities:</p>
+    <p>{{ scope_of_work }}</p>
+    <p>The Employee agrees to perform all duties to the best of their ability and in the best interest of the Employer.</p>
+    
+    <h2>3. TERM OF EMPLOYMENT</h2>
+    <p>This Agreement shall commence on {{ effective_date }} and shall continue for a period of {{ contract_duration }}, unless terminated earlier in accordance with the provisions of this Agreement.</p>
+    
+    <h2>4. COMPENSATION</h2>
+    <p>{{ payment_terms }}</p>
+    
+    <h2>5. TERMINATION</h2>
+    <p>Either Party may terminate this Agreement by providing written notice to the other Party in accordance with applicable law. The Employer may terminate this Agreement immediately for cause, including but not limited to Employee's failure to perform duties, misconduct, or breach of this Agreement.</p>
+    
+    <h2>6. CONFIDENTIALITY</h2>
+    <p>The Employee acknowledges that during the course of employment, they may have access to confidential information relating to the Employer's business. The Employee agrees not to disclose any such information during or after the term of employment.</p>
+    
+    <h2>7. INTELLECTUAL PROPERTY</h2>
+    <p>All work product, inventions, and intellectual property created by the Employee during the course of employment shall be the sole and exclusive property of the Employer.</p>
+    
+    {% if additional_terms %}
+    <h2>8. ADDITIONAL TERMS</h2>
+    <p>{{ additional_terms }}</p>
+    {% endif %}
+    
+    <h2>{% if additional_terms %}9{% else %}8{% endif %}. GOVERNING LAW</h2>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of the state/province in which the Employer's principal place of business is located, without giving effect to any choice of law or conflict of law provisions.</p>
+    
+    <h2>{% if additional_terms %}10{% else %}9{% endif %}. ENTIRE AGREEMENT</h2>
+    <p>This Agreement constitutes the entire understanding between the Parties and supersedes all prior agreements, representations, and understandings of the Parties. No amendments to this Agreement shall be valid unless executed in writing by both Parties.</p>
+    
+    <p>IN WITNESS WHEREOF, the Parties hereto have executed this Agreement as of the date first above written.</p>
+    
+    <div class="signature-block">
+        <div>
+            <p><strong>EMPLOYER:</strong></p>
+            <div class="signature-line">{{ party_one_name }}</div>
+            <p>Name: ____________________________</p>
+            <p>Title: ____________________________</p>
+            <div class="date-line">Date</div>
+        </div>
+        
+        <div>
+            <p><strong>EMPLOYEE:</strong></p>
+            <div class="signature-line">{{ party_two_name }}</div>
+            <p>Name: ____________________________</p>
+            <div class="date-line">Date</div>
+        </div>
+    </div>
+</body>
+</html>

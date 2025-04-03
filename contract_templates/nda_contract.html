@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Non-Disclosure Agreement</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .signature-block {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature-line {
+            margin-top: 50px;
+            border-top: 1px solid #000;
+            width: 40%;
+            padding-top: 5px;
+        }
+        .date-line {
+            margin-top: 30px;
+            border-top: 1px solid #000;
+            width: 30%;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>NON-DISCLOSURE AGREEMENT</h1>
+    
+    <p>THIS NON-DISCLOSURE AGREEMENT (the "Agreement") is made and entered into on {{ effective_date }}, by and between:</p>
+    
+    <p><strong>{{ party_one_name }}</strong>, with a principal place of business at {{ party_one_address }} (hereinafter referred to as the "Disclosing Party"),</p>
+    
+    <p>and</p>
+    
+    <p><strong>{{ party_two_name }}</strong>, with an address at {{ party_two_address }} (hereinafter referred to as the "Receiving Party").</p>
+    
+    <p>The Disclosing Party and Receiving Party may be collectively referred to as the "Parties" or individually as a "Party".</p>
+    
+    <h2>1. PURPOSE</h2>
+    <p>The Parties wish to explore a potential business relationship in connection with {{ scope_of_work }} (the "Purpose"). In connection with the Purpose, the Disclosing Party may disclose certain confidential and proprietary information to the Receiving Party.</p>
+    
+    <h2>2. CONFIDENTIAL INFORMATION</h2>
+    <p>"Confidential Information" means any information disclosed by the Disclosing Party to the Receiving Party, either directly or indirectly, in writing, orally or by inspection of tangible objects, that is designated as "Confidential," "Proprietary," or some similar designation, or that should reasonably be understood to be confidential given the nature of the information and the circumstances of disclosure.</p>
+    
+    <h2>3. OBLIGATIONS</h2>
+    <p>The Receiving Party shall:</p>
+    <p>(a) maintain the confidentiality of the Confidential Information;</p>
+    <p>(b) not disclose any Confidential Information to any person or entity without the prior written consent of the Disclosing Party;</p>
+    <p>(c) use the Confidential Information only for the Purpose;</p>
+    <p>(d) take all reasonable measures to protect the secrecy of and avoid disclosure or use of Confidential Information; and</p>
+    <p>(e) promptly notify the Disclosing Party in the event of any unauthorized use or disclosure of the Confidential Information.</p>
+    
+    <h2>4. TERM AND TERMINATION</h2>
+    <p>This Agreement shall remain in effect for a period of {{ contract_duration }} from the date of this Agreement. The obligations of the Receiving Party under this Agreement shall survive termination of this Agreement.</p>
+    
+    <h2>5. RETURN OF MATERIALS</h2>
+    <p>Upon the termination of this Agreement, or upon the Disclosing Party's request at any time, the Receiving Party shall promptly return to the Disclosing Party all copies of any Confidential Information in its possession.</p>
+    
+    <h2>6. COMPENSATION</h2>
+    <p>{{ payment_terms }}</p>
+    
+    {% if additional_terms %}
+    <h2>7. ADDITIONAL TERMS</h2>
+    <p>{{ additional_terms }}</p>
+    {% endif %}
+    
+    <h2>{% if additional_terms %}8{% else %}7{% endif %}. GOVERNING LAW</h2>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of the state/province in which the Disclosing Party's principal place of business is located, without giving effect to any choice of law or conflict of law provisions.</p>
+    
+    <h2>{% if additional_terms %}9{% else %}8{% endif %}. ENTIRE AGREEMENT</h2>
+    <p>This Agreement constitutes the entire understanding between the Parties and supersedes all prior agreements, representations, and understandings of the Parties. No amendments to this Agreement shall be valid unless executed in writing by both Parties.</p>
+    
+    <p>IN WITNESS WHEREOF, the Parties hereto have executed this Agreement as of the date first above written.</p>
+    
+    <div class="signature-block">
+        <div>
+            <p><strong>DISCLOSING PARTY:</strong></p>
+            <div class="signature-line">{{ party_one_name }}</div>
+            <p>Name: ____________________________</p>
+            <p>Title: ____________________________</p>
+            <div class="date-line">Date</div>
+        </div>
+        
+        <div>
+            <p><strong>RECEIVING PARTY:</strong></p>
+            <div class="signature-line">{{ party_two_name }}</div>
+            <p>Name: ____________________________</p>
+            <p>Title: ____________________________</p>
+            <div class="date-line">Date</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Contract{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <h1 class="mb-4">Create Your Contract</h1>
+        <p class="lead mb-4">Fill in the form below to generate your customized legal contract.</p>
+        
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" id="contractForm">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="mb-4">
+                        <h3 class="h5 card-title mb-3">Contract Template</h3>
+                        <div class="mb-3">
+                            {{ form.template.label(class="form-label") }}
+                            {{ form.template(class="form-select" + (" is-invalid" if form.template.errors else "")) }}
+                            {% if form.template.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.template.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <small class="form-text text-muted">Select the type of contract you want to generate</small>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="h5 card-title mb-3">Parties Information</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.party_one_name.label(class="form-label") }}
+                                {{ form.party_one_name(class="form-control" + (" is-invalid" if form.party_one_name.errors else "")) }}
+                                {% if form.party_one_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.party_one_name.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.party_two_name.label(class="form-label") }}
+                                {{ form.party_two_name(class="form-control" + (" is-invalid" if form.party_two_name.errors else "")) }}
+                                {% if form.party_two_name.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.party_two_name.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.party_one_address.label(class="form-label") }}
+                                {{ form.party_one_address(class="form-control" + (" is-invalid" if form.party_one_address.errors else ""), rows=3) }}
+                                {% if form.party_one_address.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.party_one_address.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.party_two_address.label(class="form-label") }}
+                                {{ form.party_two_address(class="form-control" + (" is-invalid" if form.party_two_address.errors else ""), rows=3) }}
+                                {% if form.party_two_address.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.party_two_address.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h3 class="h5 card-title mb-3">Contract Terms</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.effective_date.label(class="form-label") }}
+                                {{ form.effective_date(class="form-control" + (" is-invalid" if form.effective_date.errors else ""), type="date") }}
+                                {% if form.effective_date.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.effective_date.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.contract_duration.label(class="form-label") }}
+                                {{ form.contract_duration(class="form-control" + (" is-invalid" if form.contract_duration.errors else "")) }}
+                                {% if form.contract_duration.errors %}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.contract_duration.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.payment_terms.label(class="form-label") }}
+                            {{ form.payment_terms(class="form-control" + (" is-invalid" if form.payment_terms.errors else ""), rows=3) }}
+                            {% if form.payment_terms.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.payment_terms.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.scope_of_work.label(class="form-label") }}
+                            {{ form.scope_of_work(class="form-control" + (" is-invalid" if form.scope_of_work.errors else ""), rows=5) }}
+                            {% if form.scope_of_work.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.scope_of_work.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form.additional_terms.label(class="form-label") }}
+                            {{ form.additional_terms(class="form-control" + (" is-invalid" if form.additional_terms.errors else ""), rows=5) }}
+                            {% if form.additional_terms.errors %}
+                                <div class="invalid-feedback">
+                                    {% for error in form.additional_terms.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <small class="form-text text-muted">Any additional terms or special conditions (optional)</small>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        {{ form.submit(class="btn btn-primary btn-lg") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Set today as the minimum date for the effective date field
+    document.addEventListener('DOMContentLoaded', function() {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('effective_date').setAttribute('min', today);
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Legal Contract Generator{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="text-center mb-5">
+            <h1 class="display-4 mb-4">Generate Legal Contracts with Ease</h1>
+            <p class="lead">Create customized legal contracts in minutes with our user-friendly contract generator.</p>
+            <a href="{{ url_for('create_contract') }}" class="btn btn-primary btn-lg mt-3">
+                <i class="fas fa-file-signature me-2"></i>Create Contract Now
+            </a>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-file-alt fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title h5">Multiple Templates</h3>
+                        <p class="card-text">Choose from various contract templates including employment agreements, NDAs, and service agreements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-edit fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title h5">Customizable</h3>
+                        <p class="card-text">Tailor each contract to your specific needs with customizable fields for all essential contract details.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-file-pdf fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title h5">PDF Download</h3>
+                        <p class="card-text">Preview your contract and download it as a professional PDF document ready for signing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 p-4 bg-dark rounded">
+            <h2 class="h3 mb-4">How It Works</h2>
+            <div class="row">
+                <div class="col-md-3 mb-3 mb-md-0 text-center">
+                    <div class="rounded-circle bg-secondary d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                        <h3 class="h5 mb-0">1</h3>
+                    </div>
+                    <p class="mt-2">Select a contract template</p>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0 text-center">
+                    <div class="rounded-circle bg-secondary d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                        <h3 class="h5 mb-0">2</h3>
+                    </div>
+                    <p class="mt-2">Fill in the contract details</p>
+                </div>
+                <div class="col-md-3 mb-3 mb-md-0 text-center">
+                    <div class="rounded-circle bg-secondary d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                        <h3 class="h5 mb-0">3</h3>
+                    </div>
+                    <p class="mt-2">Preview the contract</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="rounded-circle bg-secondary d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                        <h3 class="h5 mb-0">4</h3>
+                    </div>
+                    <p class="mt-2">Download as PDF</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('create_contract') }}" class="btn btn-outline-primary btn-lg">Get Started</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
